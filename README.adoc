@@ -1,0 +1,4 @@
+= Neo4j GenAI Workshop
+
+That goes along with the workshop on graphacademy.
+
