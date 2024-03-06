@@ -1,10 +1,5 @@
 python-dotenv
 openai
-langchain 
-langchain_community 
-langchain_openai 
-openai 
-neo4j 
-unstructured 
-python-magic-bin 
-tiktoken
+langchain
+langchain_openai
+neo4j

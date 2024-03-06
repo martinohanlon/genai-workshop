@@ -21,15 +21,15 @@ chunks = text_splitter.split_documents(docs)
 
 print(len(chunks))
 
-# neo4j_db = Neo4jVector.from_documents(
-#     chunks,
-#     OpenAIEmbeddings(openai_api_key=os.getenv('OPENAI_API_KEY')),
-#     url=os.getenv('NEO4J_URI'),
-#     username=os.getenv('NEO4J_USERNAME'),
-#     password=os.getenv('NEO4J_PASSWORD'),
-#     database="neo4j",  
-#     index_name="chunkVector",
-#     node_label="Chunk", 
-#     text_node_property="text", 
-#     embedding_node_property="embedding",  
-# )
+neo4j_db = Neo4jVector.from_documents(
+    chunks,
+    OpenAIEmbeddings(openai_api_key=os.getenv('OPENAI_API_KEY')),
+    url=os.getenv('NEO4J_URI'),
+    username=os.getenv('NEO4J_USERNAME'),
+    password=os.getenv('NEO4J_PASSWORD'),
+    database="neo4j",  
+    index_name="chunkVector",
+    node_label="Chunk", 
+    text_node_property="text", 
+    embedding_node_property="embedding",  
+)
