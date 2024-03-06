@@ -1,4 +1,4 @@
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores.neo4j_vector import Neo4jVector
 from langchain_openai import OpenAIEmbeddings
@@ -6,7 +6,7 @@ from langchain_openai import OpenAIEmbeddings
 COURSES_PATH = "data/asciidoc"
 
 # Load lesson documents
-loader = DirectoryLoader(COURSES_PATH, glob="**/lesson.adoc")
+loader = DirectoryLoader(COURSES_PATH, glob="**/lesson.adoc", loader_cls=TextLoader)
 docs = loader.load()
 
 # Create a text splitter
