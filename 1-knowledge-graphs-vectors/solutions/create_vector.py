@@ -8,19 +8,25 @@ from langchain_community.vectorstores.neo4j_vector import Neo4jVector
 from langchain_openai import OpenAIEmbeddings
 
 COURSES_PATH = "../data/asciidoc"
+
 loader = DirectoryLoader(COURSES_PATH, glob="**/lesson.adoc", loader_cls=TextLoader)
 docs = loader.load()
 
+# tag::splitter[]
 text_splitter = CharacterTextSplitter(
     separator="\n\n",
     chunk_size=1500,
     chunk_overlap=200,
 )
+# end::splitter[]
 
+# tag::split[]
 chunks = text_splitter.split_documents(docs)
 
-print(len(chunks))
+print(chunks)
+# end::split[]
 
+# tag::vector[]
 neo4j_db = Neo4jVector.from_documents(
     chunks,
     OpenAIEmbeddings(openai_api_key=os.getenv('OPENAI_API_KEY')),
@@ -33,3 +39,4 @@ neo4j_db = Neo4jVector.from_documents(
     text_node_property="text", 
     embedding_node_property="embedding",  
 )
+# end::vector[]
