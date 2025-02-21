@@ -12,13 +12,16 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash .devcontainer/post-create.sh",
+	// "postCreateCommand": "bash .devcontainer/post-create.sh",
+	"postCreateCommand": "pip install -r requirements.txt",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
 	"customizations": {
 	"vscode": {
-		"settings": {},
+		"settings": {
+			"python.createEnvironment.trigger": "off"
+		},
 		"extensions": [
 			"ms-python.python"
 			]
