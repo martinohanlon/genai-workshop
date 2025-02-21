@@ -12,21 +12,28 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "bash .devcontainer/post-create.sh",
-	"postCreateCommand": "pip install -r requirements.txt",
-
+	"postCreateCommand": "bash .devcontainer/post-create.sh",
+	
 	// Configure tool-specific properties.
 	// "customizations": {},
 	"customizations": {
-	"vscode": {
-		"settings": {
-			"python.createEnvironment.trigger": "off"
+		"codespaces": {
+			"openFiles": [
+				".devcontainer/INSTRUCTIONS.adoc",
+				".env.example",
+				"test_environment.py"
+				]
 		},
-		"extensions": [
-			"ms-python.python"
-			]
+		"vscode": {
+			"settings": {
+				"python.createEnvironment.trigger": "off"
+			},
+			"extensions": [
+				"ms-python.python"
+				]
 		}
 	}
+
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"

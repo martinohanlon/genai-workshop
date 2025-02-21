@@ -1,0 +1,15 @@
+= INSTRUCTIONS
+
+This repository accompanies the link:https://graphacademy.neo4j.com/courses/genai-workshop[Neo4j Gen-AI - Hands-on Workshop^] on link:https://graphacademy.neo4j.com/courses/genai-workshop[GraphAcademy^].
+
+All the required software and packages have been installed.
+
+Follow the link:"https://graphacademy.neo4j.com/courses/genai-workshop/1-knowledge-graphs-vectors/1-getting-started/"[Setup Instructions in GraphAcademy] to get started.
+
+You will need to:
+
+. Create a new `.env` file and copy the contents of the `.env.example` file into it
+. Update the environment values in the `.env` file with the values in the link:"https://graphacademy.neo4j.com/courses/genai-workshop/1-knowledge-graphs-vectors/1-getting-started/"[Setup Instructions]
+
+You can run the `test_environment.py` script to check if the environment is set up correctly.
+
